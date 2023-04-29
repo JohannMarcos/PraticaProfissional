@@ -91,5 +91,6 @@ object CadastroPai: TCadastroPai
     Height = 21
     Enabled = False
     TabOrder = 5
+    Text = '0'
   end
 end

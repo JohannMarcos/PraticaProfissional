@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, uInterfaces, uPaises, uCtrlPaises;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, uInterfaces, uPaises, uCtrlPaises, uDM;
 
 type
   TfrmPrincipal = class(TForm)
@@ -27,9 +27,9 @@ type
     aInter: Interfaces;
     oPais: Paises;
     aCtrlPaises: ctrlPaises;
+    aDM: TDM;
   public
     { Public declarations }
-    procedure conhecaObj (pPais:Paises; pInter: Interfaces; pCtrlPaises:ctrlPaises);
   end;
 
 var
@@ -39,18 +39,15 @@ implementation
 
 {$R *.dfm}
 
-procedure TfrmPrincipal.conhecaObj(pPais: Paises; pInter: Interfaces ; pCtrlPaises: ctrlPaises);
-begin
-  oPais:= pPais;
-  aInter:= pInter;
-  aCtrlPaises:= pCtrlPaises;
-end;
 
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
 begin
   aInter:= interfaces.CrieObj;
   oPais:= Paises.crieObj;
-  aCtrlPaises.CrieObj;
+  aCtrlPaises:= CtrlPaises.CrieObj;
+  aDM:= TDM.Create(nil);
+
+  aCtrlPaises.SetDm(aDM);
 end;
 
 procedure TfrmPrincipal.SbmnCidadesClick(Sender: TObject);

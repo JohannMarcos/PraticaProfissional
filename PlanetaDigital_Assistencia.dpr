@@ -16,7 +16,6 @@ uses
   uConsultaEstados in 'uConsultaEstados.pas' {ConsultaEstados},
   uCadastroEstados in 'uCadastroEstados.pas' {CadastroEstados},
   uCadastroCidades in 'uCadastroCidades.pas' {CadastroCidades},
-  uAplicacao in 'uAplicacao.pas',
   uController in 'uController.pas',
   uDao in 'uDao.pas',
   uCtrlPaises in 'uCtrlPaises.pas',
@@ -24,12 +23,11 @@ uses
 
 {$R *.res}
 
-var aAplicacao : Aplicacao;
 
 begin
-  //Application.Initialize;
-  //Application.MainFormOnTaskbar := True;
-  //Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TConsultaPai, ConsultaPai);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TConsultaPaises, ConsultaPaises);
@@ -40,8 +38,8 @@ begin
   Application.CreateForm(TConsultaEstados, ConsultaEstados);
   Application.CreateForm(TCadastroEstados, CadastroEstados);
   Application.CreateForm(TCadastroCidades, CadastroCidades);
-  //Application.Run;
-  aAplicacao:= aplicacao.CrieObj;
-  aAplicacao.Execute_se;
-  aAplicacao.Destrua_se;
+  Application.Run;
+  //aAplicacao:= Aplicacao.CrieObj;
+  //aAplicacao.Execute_se;
+  //aAplicacao.Destrua_se;
 end.

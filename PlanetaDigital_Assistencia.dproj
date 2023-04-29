@@ -146,7 +146,6 @@
             <Form>CadastroCidades</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="uAplicacao.pas"/>
         <DCCReference Include="uController.pas"/>
         <DCCReference Include="uDao.pas"/>
         <DCCReference Include="uCtrlPaises.pas"/>
